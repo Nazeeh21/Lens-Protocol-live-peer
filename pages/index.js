@@ -4,6 +4,8 @@ import { css } from '@emotion/css'
 import { trimString, generateRandomColor } from '../utils'
 import { SearchButton, SearchInput, Placeholders } from '../components'
 import Link from 'next/link'
+import { Button } from '@chakra-ui/react';
+import { GoLiveButton } from '../components/SearchButton';
 
 export default function Home() {
   const [posts, setPosts] = useState([])
@@ -74,6 +76,7 @@ export default function Home() {
           buttonText="SEARCH POSTS"
           onClick={searchForPost}
         />
+        <GoLiveButton buttonText="GO LIVE" onClick={() => {}} />
       </div>
       <div className={listItemContainerStyle}>
         {

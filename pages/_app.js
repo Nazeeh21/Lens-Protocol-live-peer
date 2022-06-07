@@ -13,6 +13,7 @@ import {
 import { parseJwt, refreshAuthToken } from "../utils";
 import { AppContext } from "../context";
 import { ChakraProvider } from "@chakra-ui/react";
+import { theme } from "../theme";
 
 function MyApp({ Component, pageProps }) {
   const [connected, setConnected] = useState(true);
@@ -84,7 +85,7 @@ function MyApp({ Component, pageProps }) {
         userAddress,
       }}
     >
-      <ChakraProvider>
+      <ChakraProvider theme={theme}>
         <div>
           <nav className={navStyle}>
             <div className={navContainerStyle}>
