@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+
 import { useState, useEffect } from "react";
 import { ethers, providers } from "ethers";
 import { css } from "@emotion/css";

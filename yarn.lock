@@ -4100,15 +4100,14 @@ pify@^5.0.0:
   resolved "https://registry.yarnpkg.com/pify/-/pify-5.0.0.tgz#1f5eca3f5e87ebec28cc6d54a0e4aaf00acc127f"
   integrity sha512-eW/gHNMlxdSP6dmG6uJip6FXN0EQBwm2clYYd8Wul42Cwu/DK8HEftzsapcNdYe2MfLiIwZqsDk2RDEsTE79hA==
 
-plyr-react@^5.0.2:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/plyr-react/-/plyr-react-5.0.2.tgz#93eea6ce73d57321d8e573a20781db5a38126d1a"
-  integrity sha512-CksykyesFtmPoslasOVIplYZkduJ2OQ/q3QNUdktjy8Ds4Rhxw9u57jKBjSLdpyhENp/Yu+lDC7lOHc1o9iPUQ==
+plyr-react@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/plyr-react/-/plyr-react-3.2.1.tgz#ad295be10a60527844b03432dffe40a23f8e0c39"
+  integrity sha512-ZXMA+d837mZCkb68oTXso6rH8O+B2+A7t8ux1fdU+kFSUh1NZa1/iuItItFgScmVC6FoO3DNj+FkZP2aikxoKg==
   dependencies:
-    plyr "^3.7.2"
-    react-aptor "^2.0.0-alpha.1"
+    plyr "^3.6.8"
 
-plyr@^3.7.2:
+plyr@^3.6.12, plyr@^3.6.8:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/plyr/-/plyr-3.7.2.tgz#183d2397e7401a577700c8319fe133692b4aff54"
   integrity sha512-I0ZC/OI4oJ0iWG9s2rrnO0YFO6aLyrPiQBq9kum0FqITYljwTPBbYL3TZZu8UJQJUq7tUWN18Q7ACwNCkGKABQ==
@@ -4232,11 +4231,6 @@ rangetouch@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/rangetouch/-/rangetouch-2.0.1.tgz#c01105110fd3afca2adcb1a580692837d883cb70"
   integrity sha512-sln+pNSc8NGaHoLzwNBssFSf/rSYkqeBXzX1AtJlkJiUaVSJSbRAWJk+4omsXkN+EJalzkZhWQ3th1m0FpR5xA==
-
-react-aptor@^2.0.0-alpha.1:
-  version "2.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/react-aptor/-/react-aptor-2.0.0-alpha.1.tgz#d3f228c67aaffaf7ac9425dbca0b98fb49d593cd"
-  integrity sha512-FbvxQKsZMUZcLr2WdrQEmxH0kifsN4N+v6YdL1g3At03zouJCEcPXv+o+bhP3Ci3ya4QPvNHK/bpbrCzuKWOMw==
 
 react-clientside-effect@^1.2.6:
   version "1.2.6"

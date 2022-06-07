@@ -50,13 +50,6 @@ const Stream = () => {
       STream
       <Button onClick={startStream}>Start stream</Button>
       <video ref={videoEl} />
-      {/* {playbackId && <iframe
-        src={`https://lvpr.tv?v=${playbackId}`}
-        frameBorder="0"
-        allowFullScreen
-        allow="autoplay; encrypted-media; picture-in-picture"
-        sandbox="allow-scripts"
-      ></iframe>} */}
     </Box>
   );
 };

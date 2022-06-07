@@ -37,3 +37,15 @@ export const createStream = async () => {
   console.log(res);
   return res;
 };
+
+export const fetchStream = async (id) => {
+  const stream = await fetch(`https://livepeer.com/api/stream/${id}`, {
+    headers: {
+      authorization: "Bearer " + process.env.NEXT_PUBLIC_LIVEPEER_APIKEY,
+    },
+  });
+
+  const res = await stream.json();
+  console.log(res);
+  return res;
+};

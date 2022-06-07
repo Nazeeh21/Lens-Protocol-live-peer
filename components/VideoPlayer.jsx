@@ -31,7 +31,7 @@ const VideoPlayer = ({ id, refreshStream }) => {
       };
       loadVideo();
     }
-  }, [playbackId, refreshStream]);
+  }, [refreshStream]);
   return <Plyr ref={ref} id="plyr" options={{ volume: 0.1, autoplay: true }} />;
 };
 
