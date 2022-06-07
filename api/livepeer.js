@@ -1,5 +1,5 @@
 export const createStream = async () => {
- const stream = await fetch("https://livepeer.com/api/stream", {
+  const stream = await fetch("https://livepeer.com/api/stream", {
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -33,7 +33,7 @@ export const createStream = async () => {
     }),
   });
 
-const res = await stream.json();
-console.log(res);
+  const res = await stream.json();
+  console.log(res);
   return res;
 };
