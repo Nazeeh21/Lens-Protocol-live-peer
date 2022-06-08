@@ -6,11 +6,13 @@ import { SearchButton, SearchInput, Placeholders } from '../components'
 import Link from 'next/link'
 import { Button } from '@chakra-ui/react';
 import { GoLiveButton } from '../components/SearchButton';
+import { useRouter } from 'next/router';
 
 export default function Home() {
   const [posts, setPosts] = useState([])
   const [loadingState, setLoadingState] = useState('loading')
   const [searchString, setSearchString] = useState('')
+  const router = useRouter()
 
   useEffect(() => {
     fetchPosts() 
@@ -76,7 +78,9 @@ export default function Home() {
           buttonText="SEARCH POSTS"
           onClick={searchForPost}
         />
-        <GoLiveButton buttonText="GO LIVE" onClick={() => {}} />
+        <GoLiveButton buttonText="GO LIVE" onClick={() => {
+          router.push("/creator")
+        }} />
       </div>
       <div className={listItemContainerStyle}>
         {

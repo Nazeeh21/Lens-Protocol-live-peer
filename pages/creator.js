@@ -1,10 +1,11 @@
 import { Box, Button } from "@chakra-ui/react";
 import React, { useState, useRef } from "react";
 import { Client, isSupported } from "@livepeer/webrtmp-sdk";
-import { createStream } from "../api/livepeer";
+import { createStream, exportToIpfs, uploadAsset } from "../api/livepeer";
 
 const Stream = () => {
   const [playbackId, setPlaybackId] = useState(null);
+  const [localStream, setLocalStream] = useState(null);
   const videoEl = useRef(null);
 
   const client = new Client();
@@ -43,13 +44,29 @@ const Stream = () => {
       window.stream = stream.current;
       videoEl.current.srcObject = stream.current;
       videoEl.current.play();
+      setLocalStream(stream);
     }
   };
+
+  const stopStream = () => {
+    if (localStream) {
+      videoEl.current.srcObject.getTracks().forEach((track) => track.stop());
+    }
+  };
+
+  const saveVideo = async () => {
+    const { asset } = await uploadAsset();
+    const res = await exportToIpfs(asset.id);
+
+    console.log("export to IPFS res: ", res);
+  };
+
   return (
     <Box>
-      STream
       <Button onClick={startStream}>Start stream</Button>
+      <Button onClick={stopStream}>Stop Stream</Button>
       <video ref={videoEl} />
+      <Button onClick={saveVideo}>Save Video</Button>
     </Box>
   );
 };

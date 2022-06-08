@@ -49,3 +49,42 @@ export const fetchStream = async (id) => {
   console.log(res);
   return res;
 };
+
+export const uploadAsset = async () => {
+  const stream = await fetch("https://livepeer.com/api/asset/request-upload", {
+    method: "POST",
+    headers: {
+      authorization: "Bearer " + process.env.NEXT_PUBLIC_LIVEPEER_APIKEY,
+      "Content-Type": "application/json",
+    },
+    // body: '{\n    "name":"Example name"\n}',
+    body: JSON.stringify({
+      name: "test-upload",
+    }),
+  });
+
+  const res = await stream.json();
+  console.log("upload Asset Res: ", res);
+  return res;
+};
+
+export const exportToIpfs = async (ASSET_ID) => {
+  const exportRes = await fetch(
+    `https://livepeer.com/api/asset/${ASSET_ID}/export`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer" + process.env.NEXT_PUBLIC_LIVEPEER_APIKEY,
+        "Content-Type": "application/json",
+      },
+      // body: '{\n    "ipfs": {}\n}',
+      body: JSON.stringify({
+        ipfs: {},
+      }),
+    }
+  );
+
+  const res = await exportRes.json();
+  console.log("export to ipfs Res: ", res);
+  return res;
+};

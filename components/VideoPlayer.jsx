@@ -13,7 +13,7 @@ const VideoPlayer = ({ id, refreshStream }) => {
         ref.current.plyr.media = video;
 
         hls.on(Hls.Events.MANIFEST_PARSED, function () {
-          const playPromise = (ref.current.plyr).play();
+          const playPromise = ref.current.plyr.play();
           if (playPromise !== undefined) {
             playPromise
               .then((_) => {
