@@ -1,7 +1,8 @@
-import { Box, Button } from "@chakra-ui/react";
+import { Box, Button, Container } from "@chakra-ui/react";
 import React, { useState, useRef } from "react";
 import { Client, isSupported } from "@livepeer/webrtmp-sdk";
 import { createStream, exportToIpfs, uploadAsset } from "../api/livepeer";
+import { StartButton, StopButton } from '../components/SearchButton'
 
 const Stream = () => {
   const [playbackId, setPlaybackId] = useState(null);
@@ -62,12 +63,11 @@ const Stream = () => {
   };
 
   return (
-    <Box>
-      <Button onClick={startStream}>Start stream</Button>
-      <Button onClick={stopStream}>Stop Stream</Button>
+    <Container m='auto' h='full'>
+      <StartButton onClick={startStream}>Start stream</StartButton>
+      <StopButton onClick={stopStream}>Stop Stream</StopButton>
       <video ref={videoEl} />
-      <Button onClick={saveVideo}>Save Video</Button>
-    </Box>
+    </Container>
   );
 };
 

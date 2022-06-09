@@ -77,7 +77,6 @@ export const exportToIpfs = async (ASSET_ID) => {
         Authorization: "Bearer" + process.env.NEXT_PUBLIC_LIVEPEER_APIKEY,
         "Content-Type": "application/json",
       },
-      // body: '{\n    "ipfs": {}\n}',
       body: JSON.stringify({
         ipfs: {},
       }),
