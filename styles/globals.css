@@ -17,3 +17,12 @@ a {
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
 }
+
+.creator-video {
+  min-width: 30vw;
+  margin: auto;
+  margin-top: 4rem;
+  border-radius: 10px;
+  border-width: 3px;
+  min-height: 40vh;
+}

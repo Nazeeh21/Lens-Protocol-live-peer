@@ -2,12 +2,14 @@ import { Box, Button, Container } from "@chakra-ui/react";
 import React, { useState, useRef } from "react";
 import { Client, isSupported } from "@livepeer/webrtmp-sdk";
 import { createStream, exportToIpfs, uploadAsset } from "../api/livepeer";
-import { StartButton, StopButton } from '../components/SearchButton'
+import { StartButton, StopButton } from "../components/SearchButton";
+import { useRouter } from "next/router";
 
 const Stream = () => {
   const [playbackId, setPlaybackId] = useState(null);
   const [localStream, setLocalStream] = useState(null);
   const videoEl = useRef(null);
+  const router = useRouter();
 
   const client = new Client();
   const startStream = async () => {
@@ -23,6 +25,8 @@ const Stream = () => {
       video: true,
       audio: true,
     });
+
+    setLocalStream(stream);
 
     const session = client.cast(stream, streamKey);
     session.on("open", () => {
@@ -49,9 +53,11 @@ const Stream = () => {
     }
   };
 
-  const stopStream = () => {
+  const stopStream = async () => {
     if (localStream) {
       videoEl.current.srcObject.getTracks().forEach((track) => track.stop());
+      await localStream.getTracks().forEach((track) => track.stop());
+      router.push("/");
     }
   };
 
@@ -63,10 +69,10 @@ const Stream = () => {
   };
 
   return (
-    <Container m='auto' h='full'>
+    <Container m="auto" h="full">
       <StartButton onClick={startStream}>Start stream</StartButton>
       <StopButton onClick={stopStream}>Stop Stream</StopButton>
-      <video ref={videoEl} />
+      <video className="creator-video" ref={videoEl} />
     </Container>
   );
 };
