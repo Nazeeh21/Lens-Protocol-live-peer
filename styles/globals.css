@@ -21,6 +21,7 @@ a {
 .creator-video {
   min-width: 30vw;
   margin: auto;
+  padding: 1rem;
   margin-top: 4rem;
   border-radius: 10px;
   border-width: 3px;

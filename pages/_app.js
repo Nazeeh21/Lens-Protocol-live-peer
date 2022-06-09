@@ -108,7 +108,7 @@ function MyApp({ Component, pageProps }) {
                 </Link>
               </div>
               <div className={buttonContainerStyle}>
-                {!connected && (
+                { (
                   <button className={buttonStyle} onClick={signIn}>
                     Sign in
                   </button>
