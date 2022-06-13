@@ -46,7 +46,7 @@ export const fetchStream = async (id) => {
   });
 
   const res = await stream.json();
-  console.log(res);
+  console.log("fetchStream response: ", res);
   return res;
 };
 

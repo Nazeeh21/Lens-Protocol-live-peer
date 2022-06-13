@@ -4,6 +4,7 @@ import { useRef, useEffect } from "react";
 import Plyr from "plyr-react";
 import { Box } from "@chakra-ui/react";
 import "plyr-react/dist/plyr.css";
+import { fetchStream } from "../../api/livepeer";
 
 const Viewer = () => {
   const router = useRouter();
@@ -13,9 +14,10 @@ const Viewer = () => {
   useEffect(() => {
     const loadVideo = async () => {
       console.log("id: ", id);
+      const {playbackId} = await fetchStream(id)
       const video = document.getElementById("plyr");
       var hls = new Hls();
-      hls.loadSource(`https://livepeercdn.com/hls/${id}/index.m3u8`)
+      hls.loadSource(`https://livepeercdn.com/hls/${playbackId}/index.m3u8`)
       hls.attachMedia(video);
       ref.current.plyr.media = video;
       hls.on(Hls.Events.MANIFEST_PARSED, function () {
