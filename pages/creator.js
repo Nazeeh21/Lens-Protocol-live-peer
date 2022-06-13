@@ -15,12 +15,12 @@ const Stream = () => {
 
   const createPost = async () => {
     const createPostRequest = {
-      profileId: "0x03",
+      profileId: "0x2598",
       contentURI: "ipfs://QmPogtffEF3oAbKERsoR4Ky8aTvLgBF5totp5AuF8YN6vl.json",
       collectModule: {
         timedFeeCollectModule: {
           amount: {
-            currency: "0xD40282e050723Ae26Aeb0F77022dB14470f4e011",
+            currency: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
             value: "0.01",
           },
           recipient: "0xEEA0C1f5ab0159dba749Dc0BAee462E5e293daaF",

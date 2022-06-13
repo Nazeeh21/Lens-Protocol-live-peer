@@ -12,10 +12,10 @@ const Viewer = () => {
 
   useEffect(() => {
     const loadVideo = async () => {
-      console.log("id: ",id)
+      console.log("id: ", id);
       const video = document.getElementById("plyr");
       var hls = new Hls();
-      hls.loadSource(`https://livepeercdn.com/hls/${id}/index.m3u8`);
+      hls.loadSource(`https://livepeercdn.com/hls/${id}/index.m3u8`)
       hls.attachMedia(video);
       ref.current.plyr.media = video;
       hls.on(Hls.Events.MANIFEST_PARSED, function () {
@@ -35,7 +35,9 @@ const Viewer = () => {
         }
       });
     };
-    loadVideo();
+    if (id) {
+      loadVideo();
+    }
   }, [id]);
 
   return (
