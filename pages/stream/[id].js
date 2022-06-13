@@ -14,10 +14,15 @@ const Viewer = () => {
   useEffect(() => {
     const loadVideo = async () => {
       console.log("id: ", id);
-      const {playbackId} = await fetchStream(id)
+      const { playbackId, isActive } = await fetchStream(id);
+      if (!isActive) {
+        alert("Stream is not active");
+        router.back()
+        return;
+      }
       const video = document.getElementById("plyr");
       var hls = new Hls();
-      hls.loadSource(`https://livepeercdn.com/hls/${playbackId}/index.m3u8`)
+      hls.loadSource(`https://livepeercdn.com/hls/${playbackId}/index.m3u8`);
       hls.attachMedia(video);
       ref.current.plyr.media = video;
       hls.on(Hls.Events.MANIFEST_PARSED, function () {

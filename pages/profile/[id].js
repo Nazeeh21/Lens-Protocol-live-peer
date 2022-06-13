@@ -76,7 +76,7 @@ export default function Profile() {
         .toPromise();
 
       setPublications([...pubs.data.publications.items, { metadata: {
-        content: "livepeer playbackId: f8bdw76jp9gi5m2s"
+        content: "livepeer streamId: a43620db-8804-4e7b-b63f-f74092ccb617"
       }}]);
       setLoadedState("loaded");
     } catch (err) {
@@ -160,7 +160,7 @@ export default function Profile() {
           <h3 className={postHeaderStyle}>Posts</h3>
           {publications.map((pub, index) => {
             const isLivePeerPost = pub.metadata.content.includes(
-              "livepeer playbackId: "
+              "livepeer streamId: "
             );
             return (
               <div className={publicationWrapper} key={index}>
@@ -169,7 +169,7 @@ export default function Profile() {
                   onClick={() => {
                     if (isLivePeerPost) {
                       const playbackId = pub.metadata.content.split(
-                        "livepeer playbackId: "
+                        "livepeer streamId: "
                       )[1];
                       window.open(`/stream/${playbackId}`, "_blank");
                     }
