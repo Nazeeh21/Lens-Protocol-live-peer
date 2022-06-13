@@ -46,5 +46,6 @@ export {
   authenticate,
   refresh,
   createUnfollowTypedData,
-  broadcast
+  broadcast,
+  createPostTypedData
 } from './mutations'

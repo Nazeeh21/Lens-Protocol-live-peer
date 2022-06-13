@@ -4,6 +4,8 @@ import { Client, isSupported } from "@livepeer/webrtmp-sdk";
 import { createStream, exportToIpfs, uploadAsset } from "../api/livepeer";
 import { StartButton, StopButton } from "../components/SearchButton";
 import { useRouter } from "next/router";
+import { createClient, createPostTypedData } from "../api";
+import { signedTypeData, splitSignature } from "../utils";
 
 const Stream = () => {
   const [playbackId, setPlaybackId] = useState(null);
@@ -11,7 +13,63 @@ const Stream = () => {
   const videoEl = useRef(null);
   const router = useRouter();
 
-  const client = new Client();
+  const createPost = async () => {
+    const createPostRequest = {
+      profileId: "0x03",
+      contentURI: "ipfs://QmPogtffEF3oAbKERsoR4Ky8aTvLgBF5totp5AuF8YN6vl.json",
+      collectModule: {
+        timedFeeCollectModule: {
+          amount: {
+            currency: "0xD40282e050723Ae26Aeb0F77022dB14470f4e011",
+            value: "0.01",
+          },
+          recipient: "0xEEA0C1f5ab0159dba749Dc0BAee462E5e293daaF",
+          referralFee: 10.5,
+          followerOnly: false,
+        },
+      },
+      referenceModule: {
+        followerOnlyReferenceModule: false,
+      },
+    };
+
+    const lensClient = await createClient();
+    const response = await lensClient
+      .mutation(createPostTypedData, { request: createPostRequest })
+      .toPromise();
+
+      console.log("response from createPostMutation: ", response);
+      if(response.error) {
+        alert("error while creating post")
+        return
+      }
+    const typedData = response.data.createPostTypedData.typedData;
+    const signature = await signedTypeData(
+      typedData.domain,
+      typedData.types,
+      typedData.value
+    );
+    const { v, r, s } = splitSignature(signature);
+
+    const tx = await lensHub.postWithSig({
+      profileId: typedData.value.profileId,
+      contentURI: typedData.value.contentURI,
+      collectModule: typedData.value.collectModule,
+      collectModuleInitData: typedData.value.collectModuleInitData,
+      referenceModule: typedData.value.referenceModule,
+      referenceModuleInitData: typedData.value.referenceModuleInitData,
+      sig: {
+        v,
+        r,
+        s,
+        deadline: typedData.value.deadline,
+      },
+    });
+
+    console.log("tx data from createPost: ", tx.hash);
+  };
+
+  const livepeerClient = new Client();
   const startStream = async () => {
     if (!isSupported()) {
       alert("webrtmp-sdk is not currently supported on this browser");
@@ -28,7 +86,7 @@ const Stream = () => {
 
     setLocalStream(stream);
 
-    const session = client.cast(stream, streamKey);
+    const session = livepeerClient.cast(stream, streamKey);
     session.on("open", () => {
       console.log("Stream started.");
     });
@@ -50,6 +108,7 @@ const Stream = () => {
       videoEl.current.srcObject = stream.current;
       videoEl.current.play();
       setLocalStream(stream);
+      await createPost();
     }
   };
 

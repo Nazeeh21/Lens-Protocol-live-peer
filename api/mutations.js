@@ -101,10 +101,44 @@ const createUnfollowTypedData = `
  }
 `
 
+const createPostTypedData = `
+  mutation($request: CreatePublicPostRequest!) { 
+    createPostTypedData(request: $request) {
+      id
+      expiresAt
+      typedData {
+        types {
+          PostWithSig {
+            name
+            type
+          }
+        }
+      domain {
+        name
+        chainId
+        version
+        verifyingContract
+      }
+      value {
+        nonce
+        deadline
+        profileId
+        contentURI
+        collectModule
+        collectModuleInitData
+        referenceModule
+        referenceModuleInitData
+      }
+     }
+   }
+ }
+`
+
 export {
   followUser,
   authenticate,
   refresh,
   createUnfollowTypedData,
-  broadcast
+  broadcast,
+  createPostTypedData
 }
