@@ -1,14 +1,14 @@
-import { Box, Button, Container } from "@chakra-ui/react";
-import React, { useState, useRef } from "react";
+import { Container } from "@chakra-ui/react";
 import { Client, isSupported } from "@livepeer/webrtmp-sdk";
+import { useRouter } from "next/router";
+import { useRef, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+import { createClient, createPostTypedData } from "../api";
 import { createStream, exportToIpfs, uploadAsset } from "../api/livepeer";
 import { StartButton, StopButton } from "../components/SearchButton";
-import { useRouter } from "next/router";
-import { createClient, createPostTypedData } from "../api";
-import { signedTypeData, splitSignature } from "../utils";
-import { lensHub } from "../lenshub";
 import { uploadIpfs } from "../ipfs";
-import { v4 as uuidv4 } from 'uuid';
+import { lensHub } from "../lenshub";
+import { signedTypeData, splitSignature } from "../utils";
 
 const Stream = () => {
   const [playbackId, setPlaybackId] = useState(null);
@@ -16,16 +16,16 @@ const Stream = () => {
   const videoEl = useRef(null);
   const router = useRouter();
 
-  const createPost = async () => {
+  const createPost = async (streamId) => {
     const ipfsResult = await uploadIpfs({
-      version: '1.0.0',
+      version: "1.0.0",
       metadata_id: uuidv4(),
-      description: 'Description',
-      content: 'Content',
+      description: "Description",
+      content: "livepeer streamId: " + streamId,
       external_url: null,
       image: null,
       imageMimeType: null,
-      name: 'Name',
+      name: "Name",
       attributes: [],
       media: [
         // {
@@ -34,13 +34,15 @@ const Stream = () => {
         //   type: 'image/jpeg',
         // },
       ],
-      appId: 'testing123',
+      appId: "testing123",
     });
 
-    console.log("create Post Ipfs result: ",{ ipfsResult });
+    const currentProfileId = localStorage.getItem("defaultProfileId");
+
+    console.log("create Post Ipfs result: ", { ipfsResult });
     const createPostRequest = {
-      profileId: "0x2598",
-      contentURI: 'ipfs://' + ipfsResult.path,
+      profileId: currentProfileId,
+      contentURI: "ipfs://" + ipfsResult.path,
       collectModule: {
         freeCollectModule: { followerOnly: true },
       },
@@ -54,11 +56,11 @@ const Stream = () => {
       .mutation(createPostTypedData, { request: createPostRequest })
       .toPromise();
 
-      console.log("response from createPostMutation: ", response);
-      if(response.error) {
-        alert("error while creating post")
-        return
-      }
+    console.log("response from createPostMutation: ", response);
+    if (response.error) {
+      alert("error while creating post");
+      return;
+    }
     const typedData = response.data.createPostTypedData.typedData;
     const signature = await signedTypeData(
       typedData.domain,
@@ -124,7 +126,7 @@ const Stream = () => {
       videoEl.current.srcObject = stream.current;
       videoEl.current.play();
       setLocalStream(stream);
-      await createPost();
+      await createPost(getStreamKey.id);
     }
   };
 

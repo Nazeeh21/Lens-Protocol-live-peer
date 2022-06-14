@@ -11,10 +11,11 @@ import {
   authenticate as authenticateMutation,
   getChallenge,
 } from "../api";
-import { parseJwt, refreshAuthToken } from "../utils";
+import { parseJwt, prettyJSON, refreshAuthToken } from "../utils";
 import { AppContext } from "../context";
 import { ChakraProvider } from "@chakra-ui/react";
 import { theme } from "../theme";
+import { GET_DEFAULT_PROFILES } from "../api/queries";
 
 function MyApp({ Component, pageProps }) {
   const [connected, setConnected] = useState(true);
@@ -43,6 +44,30 @@ function MyApp({ Component, pageProps }) {
     });
   }
 
+  const getProfiles = async () => {
+    try {
+      const accounts = await window.ethereum.send("eth_requestAccounts");
+      const account = accounts.result[0];
+      const urqlClient = await createClient();
+      const response = await urqlClient
+        .query(GET_DEFAULT_PROFILES, {
+          request: {
+            ethereumAddress: account,
+          },
+        })
+        .toPromise();
+      console.log("Default profiles: ", response);
+      if (response.data.defaultProfile.id) {
+        localStorage.setItem(
+          "defaultProfileId",
+          response.data.defaultProfile.id
+        );
+      }
+    } catch (error) {
+      console.log("Error while fetching default Profile: ", { error });
+    }
+  };
+
   async function signIn() {
     try {
       const accounts = await window.ethereum.send("eth_requestAccounts");
@@ -66,7 +91,7 @@ function MyApp({ Component, pageProps }) {
         .toPromise();
       const { accessToken, refreshToken } = authData.data.authenticate;
       const accessTokenData = parseJwt(accessToken);
-
+      getProfiles();
       localStorage.setItem(
         STORAGE_KEY,
         JSON.stringify({
@@ -108,11 +133,11 @@ function MyApp({ Component, pageProps }) {
                 </Link>
               </div>
               <div className={buttonContainerStyle}>
-                { (
+                {
                   <button className={buttonStyle} onClick={signIn}>
                     Sign in
                   </button>
-                )}
+                }
               </div>
             </div>
           </nav>
