@@ -21,7 +21,7 @@ const Stream = () => {
       version: "1.0.0",
       metadata_id: uuidv4(),
       description: "Description",
-      content: "livepeer streamId: " + streamId,
+      content: "livepeer stream link: https://lens-protocol-live-peer.vercel.app/stream/" + streamId,
       external_url: null,
       image: null,
       imageMimeType: null,
