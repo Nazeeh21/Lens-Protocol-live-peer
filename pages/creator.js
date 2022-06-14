@@ -6,6 +6,9 @@ import { StartButton, StopButton } from "../components/SearchButton";
 import { useRouter } from "next/router";
 import { createClient, createPostTypedData } from "../api";
 import { signedTypeData, splitSignature } from "../utils";
+import { lensHub } from "../lenshub";
+import { uploadIpfs } from "../ipfs";
+import { v4 as uuidv4 } from 'uuid';
 
 const Stream = () => {
   const [playbackId, setPlaybackId] = useState(null);
@@ -14,19 +17,32 @@ const Stream = () => {
   const router = useRouter();
 
   const createPost = async () => {
+    const ipfsResult = await uploadIpfs({
+      version: '1.0.0',
+      metadata_id: uuidv4(),
+      description: 'Description',
+      content: 'Content',
+      external_url: null,
+      image: null,
+      imageMimeType: null,
+      name: 'Name',
+      attributes: [],
+      media: [
+        // {
+        //   item: 'https://scx2.b-cdn.net/gfx/news/hires/2018/lion.jpg',
+        //   // item: 'https://assets-global.website-files.com/5c38aa850637d1e7198ea850/5f4e173f16b537984687e39e_AAVE%20ARTICLE%20website%20main%201600x800.png',
+        //   type: 'image/jpeg',
+        // },
+      ],
+      appId: 'testing123',
+    });
+
+    console.log("create Post Ipfs result: ",{ ipfsResult });
     const createPostRequest = {
       profileId: "0x2598",
-      contentURI: "ipfs://QmPogtffEF3oAbKERsoR4Ky8aTvLgBF5totp5AuF8YN6vl.json",
+      contentURI: 'ipfs://' + ipfsResult.path,
       collectModule: {
-        timedFeeCollectModule: {
-          amount: {
-            currency: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-            value: "0.01",
-          },
-          recipient: "0xEEA0C1f5ab0159dba749Dc0BAee462E5e293daaF",
-          referralFee: 10.5,
-          followerOnly: false,
-        },
+        freeCollectModule: { followerOnly: true },
       },
       referenceModule: {
         followerOnlyReferenceModule: false,

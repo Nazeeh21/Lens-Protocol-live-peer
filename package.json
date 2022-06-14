@@ -21,6 +21,7 @@
     "framer-motion": "^6",
     "graphql": "^16.5.0",
     "hls.js": "^1.1.5",
+    "ipfs-http-client": "^57.0.1",
     "next": "12.1.6",
     "omit-deep": "^0.3.0",
     "plyr": "^3.6.12",
@@ -28,6 +29,7 @@
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "urql": "^2.2.0",
+    "uuid": "^8.3.2",
     "wagmi": "^0.4.4"
   },
   "devDependencies": {
