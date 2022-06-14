@@ -34,8 +34,7 @@ export async function refreshAuthToken() {
       })
       .toPromise();
 
-
-      console.log("authData:", { authData });
+    console.log("authData:", { authData });
     const { accessToken, refreshToken } = authData.data.refresh;
     const exp = parseJwt(refreshToken).exp;
 
@@ -57,8 +56,10 @@ export async function refreshAuthToken() {
 }
 
 export function getSigner() {
-  const provider = new ethers.providers.Web3Provider(window.ethereum);
-  return provider.getSigner();
+  if (typeof window !== "undefined") {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    return provider.getSigner();
+  }
 }
 
 export function signedTypeData(domain, types, value) {
