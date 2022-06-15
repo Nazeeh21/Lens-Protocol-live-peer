@@ -1,4 +1,4 @@
-import { Container } from "@chakra-ui/react";
+import { Button, Container, Flex, useClipboard, useToast } from "@chakra-ui/react";
 import { Client, isSupported } from "@livepeer/webrtmp-sdk";
 import { ethers } from "ethers";
 import { useRouter } from "next/router";
@@ -16,6 +16,9 @@ const Stream = () => {
   const [localStream, setLocalStream] = useState(null);
   const videoEl = useRef(null);
   const router = useRouter();
+  const [streamLink, setStreamLink] = useState(null);
+  const { onCopy } = useClipboard(streamLink);
+  const toast = useToast()
 
   const createPost = async (streamId) => {
     const ipfsResult = await uploadIpfs({
@@ -87,7 +90,7 @@ const Stream = () => {
       },
     });
 
-    console.log("tx data from createPost: ", tx.hash);
+    console.log("tx data from createPost: ", tx);
   };
 
   const livepeerClient = new Client();
@@ -143,6 +146,9 @@ const Stream = () => {
       videoEl.current.srcObject = stream.current;
       videoEl.current.play();
       setLocalStream(stream);
+      setStreamLink(
+        "https://lens-protocol-live-peer.vercel.app/stream/" + getStreamKey.id
+      );
       await createPost(getStreamKey.id);
     }
   };
@@ -167,6 +173,33 @@ const Stream = () => {
       <StartButton onClick={startStream}>Start stream</StartButton>
       <StopButton onClick={stopStream}>Stop Stream</StopButton>
       <video className={localStream ? "creator-video" : ""} ref={videoEl} />
+      <Flex mt={3} justify='space-between'>
+        {streamLink && (
+          <Button
+            cursor={"pointer"}
+            _hover={{ background: "green.700" }}
+            background="green"
+            color={"white"}
+            px={4}
+            py={3}
+            rounded={"3xl"}
+            onClick={() => {
+              onCopy()
+
+              toast({
+                description: "Copied to clipboard",
+                status: "success",
+                duration: 1000,
+                isClosable: true,
+              })
+            }}
+          >
+            Copy stream link
+          </Button>
+        )}
+
+        {/* Todo: Add direct post link to lens dashboard */}
+      </Flex>
     </Container>
   );
 };
