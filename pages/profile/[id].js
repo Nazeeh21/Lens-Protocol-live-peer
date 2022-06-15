@@ -167,7 +167,7 @@ export default function Profile() {
                   onClick={() => {
                     if (isLivePeerPost) {
                       const streamLink = pub.metadata.content.split(
-                        "livepeer stream link: "
+                        "I'm live on Livepeer! "
                       )[1];
                       window.open(streamLink, "_blank");
                     }

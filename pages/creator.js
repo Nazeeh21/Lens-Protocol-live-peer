@@ -23,7 +23,7 @@ const Stream = () => {
       metadata_id: uuidv4(),
       description: "Description",
       content:
-        "livepeer stream link: https://lens-protocol-live-peer.vercel.app/stream/" +
+        "I'm live on Livepeer! https://lens-protocol-live-peer.vercel.app/stream/" +
         streamId,
       external_url: null,
       image: null,
@@ -61,7 +61,7 @@ const Stream = () => {
 
     console.log("response from createPostMutation: ", response);
     if (response.error) {
-      alert("error while creating post");
+      alert("error while creating post, try reloading the page");
       return;
     }
     const typedData = response.data.createPostTypedData.typedData;
