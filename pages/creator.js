@@ -1,5 +1,6 @@
 import { Container } from "@chakra-ui/react";
 import { Client, isSupported } from "@livepeer/webrtmp-sdk";
+import { ethers } from "ethers";
 import { useRouter } from "next/router";
 import { useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
@@ -21,7 +22,9 @@ const Stream = () => {
       version: "1.0.0",
       metadata_id: uuidv4(),
       description: "Description",
-      content: "livepeer stream link: https://lens-protocol-live-peer.vercel.app/stream/" + streamId,
+      content:
+        "livepeer stream link: https://lens-protocol-live-peer.vercel.app/stream/" +
+        streamId,
       external_url: null,
       image: null,
       imageMimeType: null,
@@ -89,8 +92,22 @@ const Stream = () => {
 
   const livepeerClient = new Client();
   const startStream = async () => {
+    if (
+      !localStorage.getItem("defaultProfileId") ||
+      localStorage.getItem("defaultProfileId") === undefined
+    ) {
+      alert("Please Signin using your lens profile to start streaming");
+      return;
+    }
     if (!isSupported()) {
       alert("webrtmp-sdk is not currently supported on this browser");
+      return;
+    }
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const { chainId } = await provider.getNetwork();
+
+    if (chainId !== 137) {
+      alert("Please Switch to Polygon Mainnet");
       return;
     }
     const getStreamKey = await createStream();
@@ -149,7 +166,7 @@ const Stream = () => {
     <Container m="auto" h="full">
       <StartButton onClick={startStream}>Start stream</StartButton>
       <StopButton onClick={stopStream}>Stop Stream</StopButton>
-      <video className="creator-video" ref={videoEl} />
+      <video className={localStream ? "creator-video" : ""} ref={videoEl} />
     </Container>
   );
 };
