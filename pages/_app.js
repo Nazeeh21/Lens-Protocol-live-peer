@@ -225,7 +225,7 @@ function MyApp({ Component, pageProps }) {
                     _hover={{ background: "green.700" }}
                     onClick={disconnectUser}
                     color={"white"}
-                    bg="green"
+                    bg={lensProfile ? "green" : 'transparent'}
                     px={4}
                     py={3}
                     rounded={"3xl"}
