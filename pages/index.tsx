@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   const { data, error, loading } = useActiveProfile();
   const { isConnected } = useAccount();
-
+  console.log("isConnected activeProfile : ", data);
   return (
     <>
       <Head>
@@ -21,11 +21,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        {/* {!isConnected ?  */}
-        <ExploreFeed />
-        {/* : < UserFeed/>} */}
-      </main>
+      <main>{!isConnected ? <ExploreFeed /> : <UserFeed />}</main>
     </>
   );
 }
