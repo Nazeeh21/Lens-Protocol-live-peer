@@ -1,0 +1,895 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "lens-livepeer-mailchain",
+      "version": "0.1.0",
+      "private": true,
+      "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+      },
+      "dependencies": {
+        "@chakra-ui/react": "^2.5.5",
+        "@emotion/react": "^11.10.6",
+        "@emotion/styled": "^11.10.6",
+        "@lens-protocol/wagmi": "^0.12.1",
+        "@livepeer/react": "^2.4.2",
+        "@livepeer/webrtmp-sdk": "^0.2.3",
+        "@types/node": "18.15.11",
+        "@types/react": "18.0.35",
+        "@types/react-dom": "18.0.11",
+        "eslint": "8.38.0",
+        "eslint-config-next": "13.3.0",
+        "framer-motion": "^10.11.6",
+        "hls.js": "1.3.5",
+        "next": "13.3.0",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "typescript": "5.0.4",
+        "wagmi": "^0.12.1"
+      }
+    },
+    "prefix": "/Users/nazeehvahora/code/lens-livepeer-mailchain"
+  },
+  "2 debug pnpm:context": {
+    "currentLockfileExists": false,
+    "storeDir": "/Users/nazeehvahora/Library/pnpm/store/v3",
+    "virtualStoreDir": "/Users/nazeehvahora/code/lens-livepeer-mailchain/node_modules/.pnpm"
+  },
+  "3 debug pnpm:stage": {
+    "prefix": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "stage": "resolution_started"
+  },
+  "4 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/react-dom/18.0.11",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@types/react-dom",
+      "rawSpec": "18.0.11"
+    }
+  },
+  "5 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/react-dom/18.0.11",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "resolved"
+  },
+  "6 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/react/18.0.35",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@types/react",
+      "rawSpec": "18.0.35"
+    }
+  },
+  "7 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/react/18.0.35",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "resolved"
+  },
+  "8 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint/8.38.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint",
+      "rawSpec": "8.38.0"
+    }
+  },
+  "9 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint/8.38.0",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "resolved"
+  },
+  "10 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/eslint-config-next/13.3.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "eslint-config-next",
+      "rawSpec": "13.3.0"
+    }
+  },
+  "11 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-config-next/13.3.0",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "resolved"
+  },
+  "12 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@types/node/18.15.11",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@types/node",
+      "rawSpec": "18.15.11"
+    }
+  },
+  "13 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/node/18.15.11",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "resolved"
+  },
+  "14 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/react/18.2.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "react",
+      "rawSpec": "18.2.0"
+    }
+  },
+  "15 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/react/18.2.0",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "resolved"
+  },
+  "16 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/react-dom/18.2.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "react-dom",
+      "rawSpec": "18.2.0"
+    }
+  },
+  "17 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/react-dom/18.2.0",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "resolved"
+  },
+  "18 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/react-dom/18.0.11",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "found_in_store"
+  },
+  "19 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/react/18.0.35",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "found_in_store"
+  },
+  "20 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/hls.js/1.3.5",
+    "wanted": {
+      "dependentId": ".",
+      "name": "hls.js",
+      "rawSpec": "1.3.5"
+    }
+  },
+  "21 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/hls.js/1.3.5",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "resolved"
+  },
+  "22 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/typescript/5.0.4",
+    "wanted": {
+      "dependentId": ".",
+      "name": "typescript",
+      "rawSpec": "5.0.4"
+    }
+  },
+  "23 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/typescript/5.0.4",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "resolved"
+  },
+  "24 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/next/13.3.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "next",
+      "rawSpec": "13.3.0"
+    }
+  },
+  "25 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/next/13.3.0",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "resolved"
+  },
+  "26 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint/8.38.0",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "found_in_store"
+  },
+  "27 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/eslint-config-next/13.3.0",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "found_in_store"
+  },
+  "28 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@types/node/18.15.11",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "found_in_store"
+  },
+  "29 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/react/18.2.0",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "found_in_store"
+  },
+  "30 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/react-dom/18.2.0",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "found_in_store"
+  },
+  "31 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/hls.js/1.3.5",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "found_in_store"
+  },
+  "32 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/typescript/5.0.4",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "found_in_store"
+  },
+  "33 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@emotion/react/11.10.6",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@emotion/react",
+      "rawSpec": "^11.10.6"
+    }
+  },
+  "34 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@emotion/react/11.10.6",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "resolved"
+  },
+  "35 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@livepeer/react/2.4.2",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@livepeer/react",
+      "rawSpec": "^2.4.2"
+    }
+  },
+  "36 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@livepeer/react/2.4.2",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "resolved"
+  },
+  "37 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/next/13.3.0",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "found_in_store"
+  },
+  "38 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@emotion/react/11.10.6",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "found_in_store"
+  },
+  "39 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@emotion/styled/11.10.6",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@emotion/styled",
+      "rawSpec": "^11.10.6"
+    }
+  },
+  "40 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@emotion/styled/11.10.6",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "resolved"
+  },
+  "41 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@livepeer/react/2.4.2",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "found_in_store"
+  },
+  "42 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@emotion/styled/11.10.6",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "found_in_store"
+  },
+  "43 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/framer-motion/10.11.6",
+    "wanted": {
+      "dependentId": ".",
+      "name": "framer-motion",
+      "rawSpec": "^10.11.6"
+    }
+  },
+  "44 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/framer-motion/10.11.6",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "resolved"
+  },
+  "45 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/framer-motion/10.11.6",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "found_in_store"
+  },
+  "46 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/wagmi/0.12.10",
+    "wanted": {
+      "dependentId": ".",
+      "name": "wagmi",
+      "rawSpec": "^0.12.1"
+    }
+  },
+  "47 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/wagmi/0.12.10",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "resolved"
+  },
+  "48 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/wagmi/0.12.10",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "found_in_store"
+  },
+  "49 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@chakra-ui/react/2.5.5",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@chakra-ui/react",
+      "rawSpec": "^2.5.5"
+    }
+  },
+  "50 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@chakra-ui/react/2.5.5",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "resolved"
+  },
+  "51 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@chakra-ui/react/2.5.5",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "found_in_store"
+  },
+  "52 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/@livepeer/webrtmp-sdk/0.2.3",
+    "wanted": {
+      "dependentId": ".",
+      "name": "@livepeer/webrtmp-sdk",
+      "rawSpec": "^0.2.3"
+    }
+  },
+  "53 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@livepeer/webrtmp-sdk/0.2.3",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "resolved"
+  },
+  "54 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/@livepeer/webrtmp-sdk/0.2.3",
+    "requester": "/Users/nazeehvahora/code/lens-livepeer-mailchain",
+    "status": "found_in_store"
+  },
+  "55 error pnpm": {
+    "code": "ERR_PNPM_NO_MATCHING_VERSION",
+    "packageMeta": {
+      "name": "@lens-protocol/wagmi",
+      "dist-tags": {
+        "latest": "1.0.1",
+        "beta": "1.0.0-beta.1"
+      },
+      "versions": {
+        "0.1.0": {
+          "name": "@lens-protocol/wagmi",
+          "version": "0.1.0",
+          "dependencies": {
+            "@lens-protocol/shared-kernel": "0.1.0"
+          },
+          "devDependencies": {
+            "ethers": "^5.7.2",
+            "prettier": "^2.8.1",
+            "react": "^18.2.0",
+            "rimraf": "^3.0.2",
+            "typescript": "^4.9.4",
+            "wagmi": "0.9.2",
+            "@lens-protocol/react": "0.1.0",
+            "@lens-protocol/eslint-config": "0.1.0",
+            "@lens-protocol/prettier-config": "0.1.0"
+          },
+          "peerDependencies": {
+            "ethers": "^5.7.2",
+            "wagmi": "0.9.2",
+            "@lens-protocol/react": "0.1.0"
+          },
+          "dist": {
+            "integrity": "sha512-yvQDLHoTb8rFkNC8TcPVK9fEiwVez4m9l6NBDUJ3NmHeNWTO7uP9NpXiHwd7gDKBe0bAPt4amve3gAUTcW93fA==",
+            "shasum": "6d3a6245a2ac3b7fbf0475005a8b75c4f334a5cd",
+            "tarball": "https://registry.npmjs.org/@lens-protocol/wagmi/-/wagmi-0.1.0.tgz",
+            "fileCount": 9,
+            "unpackedSize": 5236,
+            "signatures": [
+              {
+                "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                "sig": "MEQCIDpNuWYUa+0Pe7VqgxLkjVc88QB2A/13CcaXixQU+vi9AiA3ubqaCuQqJnFnjGg025ccLvILySheEgwnggz2oaP+OA=="
+              }
+            ],
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJjpbkoACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2Vmp/XA//XowNehwiASqtEJl0gIVshmvPTdGvbh/vxatZDDfD4ShPK1YF\r\nF0D0zEBso6ywQAnwGWACiaEhz7CxvkxElTeoFInjNtao3pdi2+ibh1Rfi+VK\r\n7r+pFXvYtpfqep4otCh0Ba4mil0wKWoIBajbHzabhY/wBEZqsKHmnxhv6yYP\r\nuMDrixAPVI+znMQd6maqHhdwCSiEP6QaA5PM0i1fxwaW80NQ7MxfYaRhtQzk\r\ncsdLx+BfAsMJZMV202J/KfhjevvSbz6cbjqzexMMfktFmvS//VtTeCQ3BU1R\r\n0EZZEhkVgURLhamrM827awwj7BBcxAt/Gg8VfswxuOw3oL/Ox+6gcBrgPN5p\r\nFvQSs1hWcMXmVwj5X8CjO9nyMCy9q+3L4lk7Nt/ZqSpdFbd5nvQrRJpg/vCQ\r\nRtyE6J59IvANWtppHFpAmZ1y3niHyZY8diquPVZWvwIKamyX0KffKVlBZXV5\r\n90n5FeNFIlxYl6cf+Eo5UR8kYUIex5RsBhUa2XNli/yqqOztGaf69ml4F/3+\r\nq4ml8Nw4FR9+VF89SxtrKjkBqK4NZWFfYdgVQ8PBPyXUGa4GoBuZCFbBF0Kx\r\nSv7oeTgKAfWeziOEmQ0hypC9MoV4FwIz0U/yugvs1VLLRNdI/f5er8T/PcW5\r\ncdAuKRNylQazVWs4EE8zEjlSfVtdoU4N240=\r\n=wKo2\r\n-----END PGP SIGNATURE-----\r\n"
+          }
+        },
+        "0.1.1": {
+          "name": "@lens-protocol/wagmi",
+          "version": "0.1.1",
+          "dependencies": {
+            "@lens-protocol/shared-kernel": "0.1.1"
+          },
+          "devDependencies": {
+            "ethers": "^5.7.2",
+            "prettier": "^2.8.1",
+            "react": "^18.2.0",
+            "rimraf": "^3.0.2",
+            "typescript": "^4.9.4",
+            "wagmi": "0.9.2",
+            "@lens-protocol/react": "0.1.1",
+            "@lens-protocol/eslint-config": "0.1.1",
+            "@lens-protocol/prettier-config": "0.1.1"
+          },
+          "peerDependencies": {
+            "ethers": "^5.7.2",
+            "wagmi": "0.9.2",
+            "@lens-protocol/react": "0.1.1"
+          },
+          "dist": {
+            "integrity": "sha512-b6w3XwNQyPwEgrzlUBDnU09Y4goiIapWqpb+qRqB8x8dC7fS6AwPy3jMm1WdPHkWH7cD0EonNDIKAqjTCzG8Kg==",
+            "shasum": "b1b6aa26c048eb240720dd4f22b66dd6e07a06b8",
+            "tarball": "https://registry.npmjs.org/@lens-protocol/wagmi/-/wagmi-0.1.1.tgz",
+            "fileCount": 9,
+            "unpackedSize": 5236,
+            "signatures": [
+              {
+                "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                "sig": "MEYCIQCg7wQ+zAV8cIzsH6amRbQP5WCloyht0lwFElam7//cPQIhANAsgDvkgXBikdV0F2lt/9Ab2wJJfbIgBGm3UkCd4xQJ"
+              }
+            ],
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJjqwJBACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2VmpAlhAAiPNRdl4X6W8xiem4JZGPZXsyyX3clBCG/WPS4RZn1k/0mUc9\r\nb5zjkUR1ackm/MTxJbvHgRKQJlhi2pmojqyoYwoHckDqPaEB8rx6luJilI57\r\n4FeBQw0EyQwNMYbfk/maSuMSGwPcth55vgFPAuidqpb0mT/uTFFVLVZNoOSf\r\nGM2Ze8qJIqxANhTPPFL8uw+oKRqTgDhAlmttJzbM3kDOWRL3o7QwuOs6+QMe\r\nC3YejHzpfV/OP4jC9dKkLDOM/5M2LFHXFQShJJhzfH8lWSxldOXXOSBUgq+G\r\nXJAhIPt+bgtBXzqs/xVxj/R9lirMdR7+cqqIM66ImLg319/40tTf3OkVLwzh\r\nZgcYVoJXLpoexs+fED23d8xbAis+D32+UGR/OLs2ED7a6/iGUuWSCgXWYly/\r\nPjaNzbuNkHxQvXEZIPh0IVBXg3YViRL+RPuRucoT3Nd7F5CWkoK/wSku0lcF\r\nMUlc2JXk4FPPg34K07bd/9xfzFlGVpQXsHV6yPa17H7eEryQB2LRx1LhW+mM\r\n0FNP3P/otZo8QqwQz//h+jTjomH7HeqACjmQbbYKjibauQ1zqo3bflVVVYZ6\r\nW4TFY1F1bi4a+r8+LNf7GPvzaUdN146KzGu+bSiqtWliU4Y2uisu0yvGZsjr\r\nJNNMHIdLvwBsc4Z7wqZf94zTAXCHas+V0E4=\r\n=cIg7\r\n-----END PGP SIGNATURE-----\r\n"
+          }
+        },
+        "0.2.0": {
+          "name": "@lens-protocol/wagmi",
+          "version": "0.2.0",
+          "dependencies": {
+            "@lens-protocol/shared-kernel": "0.2.0"
+          },
+          "devDependencies": {
+            "ethers": "^5.7.2",
+            "prettier": "^2.8.1",
+            "react": "^18.2.0",
+            "rimraf": "^3.0.2",
+            "typescript": "^4.9.4",
+            "tsup": "^6.5.0",
+            "wagmi": "0.9.2",
+            "@lens-protocol/eslint-config": "0.2.0",
+            "@lens-protocol/react": "0.2.0",
+            "@lens-protocol/prettier-config": "0.2.0"
+          },
+          "peerDependencies": {
+            "ethers": "^5.7.2",
+            "wagmi": "0.9.2",
+            "@lens-protocol/react": "0.2.0"
+          },
+          "dist": {
+            "integrity": "sha512-48j09Ll+Q+IEYbsiYY0q/giyYdWbbfgQabhvreEmfHGKjlwa4GiQ9cKozo05/pmYiR8FcoQXRaHw1a99e4DYJg==",
+            "shasum": "0b0a172965dbae0d2ffbe4621fd0ce874c3c8d96",
+            "tarball": "https://registry.npmjs.org/@lens-protocol/wagmi/-/wagmi-0.2.0.tgz",
+            "fileCount": 6,
+            "unpackedSize": 3943,
+            "signatures": [
+              {
+                "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                "sig": "MEUCIQCjgNOBnVei94Z6yf1Eig+EWhIvbLFfKDQlwlBySoeDYQIgfTIc4vM6QVGjcrxa/vhsiHLc6nz5yH3hTjZ4V/PnT+U="
+              }
+            ],
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJjwVyAACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2Vmo+UQ/8DiS9NkDKBX/6TRN5AlHEw2R/yUGYvahnKPsKnkLry77SIsZX\r\n7YNe+hAoePOzGey/FJzTryAEqlOUQ4BAJvXS4PPv1zL49Nbq/NcNXUyazO1X\r\n7ViIaMS7N8C965DdWsjWb4Os6K2VakGs4umaL/ELD5Ks84sDf3c5xy9JSkcd\r\nMNt8RQsVr+Dk2VfgoI2+v+cx9TP/DM6W3cl5ADQl+yRLbfFDgzrfwY8RzYvk\r\nTd0dy4UIjE4Vs8gGBSEtdvqhZJCoTJnSFB1ZKQ6+TJhiJnygyKjw62qCWUiK\r\nswf8JcqwVDi9Khn43zod+0c7vatVAA2zyAlCFAk8RtW5gOixch8iw3gKfikF\r\n72o1fDo52qrjpx++lrfHnvLaUr0hbjx0wmND/I+Omd5Ir0SGKJ6IzbZss1tL\r\nreCWcuzAyDUKmgmIEr/Xnrv/0CSj9MREL8LPkSCKaafaJbey87DKdM7Pt2Id\r\nQiBHG+esuIVfmLSyJ7MIrTR6b/l5jeOyT6+k4qOA1pDhHtsSUMSRroBhRxKN\r\n7WhJdlPxDGvhJlpoZBrnCplfocIDHSM7md87lkDbExfq5nPgSyCFW4IMlgEi\r\n0nNYph3LTzH1zGLiL7PXsAZfk1k2SeiV9WT7Cu+Xllsd9nLnX7T5C6dNJq8U\r\nMnTTBfuQ7dkPuWmy/ZnGduNADf6naBWwf7s=\r\n=zniR\r\n-----END PGP SIGNATURE-----\r\n"
+          }
+        },
+        "0.3.0": {
+          "name": "@lens-protocol/wagmi",
+          "version": "0.3.0",
+          "dependencies": {
+            "@lens-protocol/shared-kernel": "0.3.0"
+          },
+          "devDependencies": {
+            "ethers": "^5.7.2",
+            "prettier": "^2.8.1",
+            "react": "^18.2.0",
+            "react-dom": "^18.2.0",
+            "rimraf": "^3.0.2",
+            "typescript": "^4.9.4",
+            "tsup": "^6.5.0",
+            "wagmi": "0.9.2",
+            "@lens-protocol/eslint-config": "0.3.0",
+            "@lens-protocol/prettier-config": "0.3.0",
+            "@lens-protocol/react": "0.3.0"
+          },
+          "peerDependencies": {
+            "ethers": "^5.7.2",
+            "wagmi": "0.9.2",
+            "@lens-protocol/react": "0.3.0"
+          },
+          "dist": {
+            "integrity": "sha512-4XNLl/GvK7elDG8+tgvtMz4hVEpLNpITHQb5FPff18Koi460OhxyPBvq0HmX87mHrzSzZH6GFY/JIhW93WgszQ==",
+            "shasum": "610aae3eec34ce4a59bf320b3ebcf825dccb8faa",
+            "tarball": "https://registry.npmjs.org/@lens-protocol/wagmi/-/wagmi-0.3.0.tgz",
+            "fileCount": 6,
+            "unpackedSize": 4256,
+            "signatures": [
+              {
+                "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                "sig": "MEQCIHsLoVf7XjZenwO9ysHJIjBxrzNdcwE+NIyFi1b0A/h2AiBBVWu2DY8HX9DbSX17D2nTCsWr/ejvyk9uACNjLUSHqw=="
+              }
+            ],
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJj0WahACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2VmoBCw//QAidVnFoHfY5BR0/2rEqFNiijDuI/jGENlnnkfAzvZlTGLTt\r\nnHU9WY5nBqEWeIXnX8+rYm7DMmvpV2rNYbFuGn3EhkZKwFttJNMcpeHmPQCe\r\nL6Jn/pF9XjYZnTXGbzfFjUjz/8uroiiiYEV9NGFlxPb0imOygS68PpoJcrFa\r\nSTkdwZtCC5WSj4f9vTPQmZl/0ivfmLmsi19ZtnCPSlGhzQBEgmmKMbd6th2V\r\nT69t9WzmSWHxM8kBdgGTdZuKGoiwqNp6Kesri37qmPOxwltUs+ewJV4FgEOs\r\ni40hgqKy4MJplSvzctBSPYaeH7rAUPD6ps7dQkCLrrGJwntQohIApqI/aI4A\r\nLkU/FUtUhw+wj2N7B5N/jJmAr+QavxHP35MB5ZTEb0hgGs2z7zYpaOBWBh9F\r\nY7/TkzqeC7HWM8Mwqkbwg7Ww90osOWUEfnXpl88TYgUan1/bKniX3AQGf17J\r\ntDiv+8z5VqhsyNoGCI/LNzaRg3vCr7l7KbIHGtYMxYgJ8YWGTt90bCPMFXOl\r\nidpjaRl8L+zRs5Hzr2eKq/HlIDlkeGecvFUSYQPJjNrEm/I9b2CMKxB4TArS\r\nFdzOCxsg0iyNh8J6zNtAarAmxgJdX/kY2eDUob+FYxFEJPTA3jNEsC0qPlZb\r\n5v6hrf0pi2VujWDQM9kLiO4fs4NmpSrde44=\r\n=8IDJ\r\n-----END PGP SIGNATURE-----\r\n"
+          }
+        },
+        "0.4.0": {
+          "name": "@lens-protocol/wagmi",
+          "version": "0.4.0",
+          "dependencies": {
+            "@lens-protocol/shared-kernel": "0.4.0"
+          },
+          "devDependencies": {
+            "ethers": "^5.7.2",
+            "prettier": "^2.8.1",
+            "react": "^18.2.0",
+            "react-dom": "^18.2.0",
+            "rimraf": "^3.0.2",
+            "typescript": "^4.9.4",
+            "tsup": "^6.5.0",
+            "wagmi": "0.9.2",
+            "@lens-protocol/prettier-config": "0.4.0",
+            "@lens-protocol/react": "0.4.0",
+            "@lens-protocol/eslint-config": "0.4.0"
+          },
+          "peerDependencies": {
+            "ethers": "^5.7.2",
+            "wagmi": "0.9.2",
+            "@lens-protocol/react": "0.4.0"
+          },
+          "dist": {
+            "integrity": "sha512-bHzDvWGnGU4poZGdX8BZaSI6sN7n9jsw8pJ+ibPAenIkvBEWAyVncc9Kj6y8EhslOdcZd4XUiMCvZVF2Wn3yog==",
+            "shasum": "6d24962a948c0f8b3193136c9c4dbfb76ef8ea7e",
+            "tarball": "https://registry.npmjs.org/@lens-protocol/wagmi/-/wagmi-0.4.0.tgz",
+            "fileCount": 6,
+            "unpackedSize": 4256,
+            "signatures": [
+              {
+                "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                "sig": "MEUCIBTsnWis7Wbxt0fM6QoTr1PGNwX1+2h809AgCD7gqVjmAiEAn1CQiydMFYE9bbtdCUXWuv/18zBMH0W9axfXh2kVc/g="
+              }
+            ],
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJj5mxFACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2Vmr4AhAAlgC5SpQbFbbxzhSwZWKQ/Jvk8hMz5p3DPFS0UcxUGQRAYdy8\r\n05JomwY/oum74Npq0dQlDwRBwNMHREm6mGebq4G7/ZyDb73UvdwETKWaR8Uk\r\nicSFNGjpcHBfkyVgsJ2uMYMdhyUw/hXB7HsO/2hpEZBrHPk7V45qCSq1tBOb\r\nXN5HNirKlRboQT+5CqN1mhDBw3CgkTswySPuf1sRW4JDLpcJ5kXkzWVkHAJQ\r\nSLmQS6vcp4xbvFY63ZT5NodEnAVZPU13v9YtYxzSN3MoSkreLWNP75mA5piM\r\nIAaj5DVsQOvP8y7FqyrAQb22tfH3SyjG5ySIhPc39vx5l5y3s0OeeMK4sfyW\r\n9V0C1C71My7CohHt3zYRnxR4DfyqSCE0KK3ExzRH39VXrgwkRy6e2fNyf8JY\r\nTd4Tfwy/SouvnzcYCWNRZefcS6KkKQCDg+5Af/jShOAFCWqAykoGFD1PZ8wx\r\nKPuB+On1IWYwo6gpQ6mvIW+CS8CG8ManUzkN7K3V1a6XwiFkTBsFb/w8Ocvf\r\nW35E4oZZbtoNOA9h8RzABQLikB86M5mS/2s1iD2MzPUz/9+hR8//vZwKZF35\r\naQ+ht29RGL3vGfbpGe6gD9OwqkqtQG66UTVTzHq5sfxCeLL6X2N7y9KmUiAb\r\nPy7tTM9SW3wUvvxn3GPxZyR19bR/OyH84qk=\r\n=yKX1\r\n-----END PGP SIGNATURE-----\r\n"
+          }
+        },
+        "0.4.1": {
+          "name": "@lens-protocol/wagmi",
+          "version": "0.4.1",
+          "dependencies": {
+            "@lens-protocol/shared-kernel": "0.4.1"
+          },
+          "devDependencies": {
+            "ethers": "^5.7.2",
+            "prettier": "^2.8.1",
+            "react": "^18.2.0",
+            "react-dom": "^18.2.0",
+            "rimraf": "^3.0.2",
+            "typescript": "^4.9.4",
+            "tsup": "^6.5.0",
+            "wagmi": "0.9.2",
+            "@lens-protocol/eslint-config": "0.4.1",
+            "@lens-protocol/prettier-config": "0.4.1",
+            "@lens-protocol/react": "0.4.1"
+          },
+          "peerDependencies": {
+            "ethers": "^5.7.2",
+            "wagmi": "0.9.2",
+            "@lens-protocol/react": "0.4.1"
+          },
+          "dist": {
+            "integrity": "sha512-CoGNtEunLKBD3B3Lfp1zyw6n0PywTXqLu3MqIBK+t0zBk4RfPMNM+vdMSf1iPjfum6nWa+oyGPJytN8Ue1Mu2g==",
+            "shasum": "68c92565e3d8c4e7d1e15a82280ca579e9fca9ba",
+            "tarball": "https://registry.npmjs.org/@lens-protocol/wagmi/-/wagmi-0.4.1.tgz",
+            "fileCount": 6,
+            "unpackedSize": 4256,
+            "signatures": [
+              {
+                "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                "sig": "MEQCIEIOxkhghtnTtorrV6o+0NlWwRb6+Ez/sAKEu/MsKGEcAiAVsfJNVxnuVOqC0KizivwVyaAy9YkztJSTS3CUWj1crw=="
+              }
+            ],
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJj61tlACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2Vmq7uQ//QQ8QDx7GeCEA4XZMh0V55t7XFJ7b4xXQCNcT++Kiqo/O1nvP\r\nY7ieDPfc/FlLSJ8ttEzKbsCZksIcR1B2iPCMsp+F0LMa+4VfoVMXwlQKBmNh\r\nJkSWLHFZrZ29diDIs1Myy4wBwVtDTvwhduZpVLdQurL/5T1O7dEwDXeLPZEb\r\nkPX4BaN+5bUj+8mMv1W5x+oZqNL+kprRK4NsDkNIRGpl5HvEv96ICBsSyKaj\r\n1UToV24BRqS8LX8ZI/xyybscUJPLP/ivXkZaCNOM3sPTQFQOY3kQGjIkFF+T\r\n7e2DwWiTzCV5INHglipBUoUTDOMAkmnXBtFhmyfKUrO7fAK5CSOV9HJyLF89\r\n0xhUEInKQkNoFstqHpnL98rtYQx+UK7Tno2qA0e/qv0+9lNga0zGLkO3/UT/\r\nHwHiSp978tD1OogJxj0pQuZI4G2iooOLYPLwsLfc7DIDSNxKD20y+OmCRbr8\r\nv6JzGa1GFBEabFtuIkpqsaU9c5KJXW6uR7vy9tUM9ZkOqIKS9H6gcF0yHIAl\r\n1yceUTzygh3kPSWCoqknRoDqP8BCuIrJse14XG3Ia6+0d44Y0ITgr0MgwQaU\r\nYkq4vEkXJ8eIinnQoB6jv6wuNm+ks9HJ/iB3Y4Nzcft+Z74hin3iLcylld2V\r\n0QRbyxScTAi8au74iHcI/WHGq7O7aTdjXbo=\r\n=DxgR\r\n-----END PGP SIGNATURE-----\r\n"
+          }
+        },
+        "0.5.0": {
+          "name": "@lens-protocol/wagmi",
+          "version": "0.5.0",
+          "dependencies": {
+            "@lens-protocol/shared-kernel": "0.5.0"
+          },
+          "devDependencies": {
+            "@babel/core": "^7.20.12",
+            "@babel/preset-env": "^7.20.2",
+            "@babel/preset-typescript": "^7.18.6",
+            "@types/node": "^18.14.0",
+            "ethers": "^5.7.2",
+            "prettier": "^2.8.4",
+            "react": "^18.2.0",
+            "react-dom": "^18.2.0",
+            "typescript": "^4.9.5",
+            "wagmi": "0.11.7",
+            "@lens-protocol/eslint-config": "0.5.0",
+            "@lens-protocol/prettier-config": "0.5.0",
+            "@lens-protocol/react": "0.5.0"
+          },
+          "peerDependencies": {
+            "ethers": "^5.7.2",
+            "wagmi": ">=0.9.2 <=0.11.7",
+            "@lens-protocol/react": "0.5.0"
+          },
+          "dist": {
+            "integrity": "sha512-8rZtmSLt48Xs7rufbezrWvqPlv1m5DSeF3EqsdNqNBU/KovF3qvKrTDMql7x9k4DcUZj3FsCyZJYTHi+hptnGQ==",
+            "shasum": "5fcfd3891bcb63644126be8a855bd98f0202c3d3",
+            "tarball": "https://registry.npmjs.org/@lens-protocol/wagmi/-/wagmi-0.5.0.tgz",
+            "fileCount": 10,
+            "unpackedSize": 52841,
+            "signatures": [
+              {
+                "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                "sig": "MEUCIQCre+/6fYtglL8F6xKeuwPBD/Ly8nxNl49KwNTRDewD5QIgbAETQkXuD8bqG+SepR1Jheg8idZ4WcKEVjNxFwOVFo4="
+              }
+            ],
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJj/39cACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2Vmp4Jg/9GfzyrqsAJT/thdAOd7Ag/sZlKBIH6QMdgFUbRPlGrpc52Xaq\r\neW02LyzMKAKT5/vEgBdjJzkArsw8nbgUWZoqTh8MjCkMNMVzzfqCGqKc2RjG\r\nG+YA7NoAi9GhaDq1FWbAHp3FtdKxB4VTdwyAvXP/JjpxF0fzbOCoCyYQd58v\r\n7sa5QxougHlVRbwyfNCSpoP8E2hfrmpYCWiVhBgeGeTafvuy9ztcSjhCSdCr\r\ncteSCwsULtdOY+thKaeZhkfFE/ODd8jlNoCS+rsN+kh9gWUWu8SYaQm7odNk\r\nrhYi9NdENrahtIXX/hORxmQzr3QSiatIz+/cjaLgP2tJ+wQ6YFlAPctJSlqR\r\nHwpJUu1HWw246e/3WbhKkM93X7DExdPQhuhEubgNjdFGJmGxv1V6/qZIUfF3\r\nmNSeqlqJZP4+NSwmmwp4xkusxq3NjMXh/BWXfBM22W5Jsw95BTxgR5BmHjLF\r\ni2HhXqBZRqIsH3+1sMdlg1Fw1R2LkbfopDMjlXL7lppV7BSFm2HQtOAdvl0B\r\nN8y8MIakfQE25d0TJVZADALwz1UjxZcvwvn6dk6oYKTNHNahUaBToFqUC76B\r\nI/wyogW6V66jDe//HaTygl2pF7TKBu/glAQsQLrE3p8y4HaPvoBFhzwZtJbl\r\nna9isxkqUrS+ad2uT3uReJKGWGrjnTwTZSQ=\r\n=YKbK\r\n-----END PGP SIGNATURE-----\r\n"
+          }
+        },
+        "0.5.1": {
+          "name": "@lens-protocol/wagmi",
+          "version": "0.5.1",
+          "dependencies": {
+            "@lens-protocol/shared-kernel": "0.5.1"
+          },
+          "devDependencies": {
+            "@babel/core": "^7.20.12",
+            "@babel/preset-env": "^7.20.2",
+            "@babel/preset-typescript": "^7.18.6",
+            "@types/node": "^18.14.0",
+            "ethers": "^5.7.2",
+            "prettier": "^2.8.4",
+            "react": "^18.2.0",
+            "react-dom": "^18.2.0",
+            "typescript": "^4.9.5",
+            "wagmi": "0.11.7",
+            "@lens-protocol/eslint-config": "0.5.0",
+            "@lens-protocol/prettier-config": "0.5.0",
+            "@lens-protocol/react": "0.5.1"
+          },
+          "peerDependencies": {
+            "ethers": "^5.7.2",
+            "wagmi": ">=0.9.2 <=0.11.7",
+            "@lens-protocol/react": "0.5.1"
+          },
+          "dist": {
+            "integrity": "sha512-wd3GvWFCeuJps9D/6Y+w+tbkGDAxbWtGYKFGglof55GDzWnhDNwWJSms69mdUC+lDBKJ+tMXgsQ0sXSLfunCuQ==",
+            "shasum": "224e2770fa33aee83a639692caefcd0fd8f8cf05",
+            "tarball": "https://registry.npmjs.org/@lens-protocol/wagmi/-/wagmi-0.5.1.tgz",
+            "fileCount": 10,
+            "unpackedSize": 52841,
+            "signatures": [
+              {
+                "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                "sig": "MEUCIACscpfFgmJH1KE76XnX1P9RRaIFWniIGRBF+X7TgUnkAiEA+YcHP4n5O41OUBabOVdUplUGnbmA0h7KWJhbc6B0PF8="
+              }
+            ],
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJkB3zjACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2Vmqehg/5AcNv9F0RHctPf0Skh1EoIbxCqzHeFkt0NfBctI98ASpDHVVo\r\nxZm7kFpgMkFvGxIswJdIV78vTK7NUQzbK03OjWAPT5Oc6lpfWZTFvosfjr1V\r\n7rrBKa1TNj79ZIjKO9jdejwT0/r/VG/mjm2ykFqYfEnn8qsUSGkQY1XnYR8K\r\nz9Mp6tZmjjS+eXdMfzgkDXN+o0xD2ZMbJDjqWb6X7kSaaJCnyzfbqBUbRPZD\r\nVUu9lu38DmlXxX5c2TcreeDfJkVQLKP67Oa2b6A77R3HOC3iCLB2sgGW2GgA\r\nL9aRV/MYNPgiHzGkwWNoSRiK1D79hq/MjAxw7whbsym0aEe1fOG+15Rp7OXx\r\nPsYACNXrrYazhlSvtx0f2BmQ+AHsXhcpodBsKl7mo/T8rbiqCw91cBQM3mdC\r\nQI1g+NSHEVldqF0ch1qJciEB9p7TXL8DQg7plRgIU27RU7VRlFzQjct2/0Z/\r\nMzyJuv2hsQiiipKOqBq2QRLTRf3+Q3WNwlN1iYf9TirYbl64uSr3yttIb5/g\r\nCJsWAOWlY+BaSHG0X3HvUeza8evW6SpzmE3BvDM0mlZJkCWx0i/LfXywn8Za\r\nU30KbxtO4F+yaVfmNg4DmudI6uR8mp6hCPHUseoVhWyu976Qk0L66gvrS/Qd\r\nntkfKcWzMd6nX5/R81L0lQD+HSL2xsEHid8=\r\n=grDx\r\n-----END PGP SIGNATURE-----\r\n"
+          }
+        },
+        "0.6.0": {
+          "name": "@lens-protocol/wagmi",
+          "version": "0.6.0",
+          "dependencies": {
+            "@lens-protocol/shared-kernel": "0.6.0"
+          },
+          "devDependencies": {
+            "@babel/core": "^7.20.12",
+            "@babel/preset-env": "^7.20.2",
+            "@babel/preset-typescript": "^7.18.6",
+            "@types/node": "^18.14.0",
+            "ethers": "^5.7.2",
+            "prettier": "^2.8.4",
+            "react": "^18.2.0",
+            "react-dom": "^18.2.0",
+            "typescript": "^4.9.5",
+            "wagmi": "0.11.7",
+            "@lens-protocol/eslint-config": "0.5.0",
+            "@lens-protocol/prettier-config": "0.5.0",
+            "@lens-protocol/react-web": "0.6.0"
+          },
+          "peerDependencies": {
+            "ethers": "^5.7.2",
+            "wagmi": ">=0.9.2 <=0.11.7",
+            "@lens-protocol/react-web": "0.6.0"
+          },
+          "dist": {
+            "integrity": "sha512-80gnKjvWs3EPpK57M7SOCj674mIi97VrJXoWN2/F7idvM1s2SCLn1Q937YNIU+cjxkxnXW1RX1LUz++GQgkl0g==",
+            "shasum": "7ea094f3e55678cd831247e151cd590a46433ba1",
+            "tarball": "https://registry.npmjs.org/@lens-protocol/wagmi/-/wagmi-0.6.0.tgz",
+            "fileCount": 10,
+            "unpackedSize": 52853,
+            "signatures": [
+              {
+                "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                "sig": "MEUCIQC5kwo2jU+mXkAsxld9tVFiFcAIKU22eTBY01vlrBcjiAIgSXZ36OQDfG5o+8imeapwDPRaSM0bBBxzuRBXjDsrUGs="
+              }
+            ],
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJkFIT1ACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2VmoanA//VelyOYvEwJLZjWlbZPUUtWrL2QPhtrc0eolpEhYe+kzoAwOe\r\n1yZXfen4n+nCnjc37Mrz93xx92SFJoaVVv8nmXP/f9OzKJUh5PAdYm+qoG7g\r\nMetCfEKE7STvWzyqT9ton2u91va9TdhQcpw/Q3y8gFzJHiyBsL7v9rYeUsO8\r\noK8oVj7CaJs4Eip0Ea3YshOTaPww+5EQ1h0yFgrbxYn5mg6W0Ud8IsYSnUqo\r\nji5e2SpyAr6pwCekSdhMMyBpQ1KJNxFFshOADccnKfmLl3Y9Ioe2zGEX/8hx\r\nO6oS3PXAlrVyvgSQHMR+HO8i0XubWL0T+Nps1KQmJsN8R0iYDjJMNC8zhA9Z\r\nPdYtp0UN5MN7dTG0ezzizqAj9MDWAj8WnwABt2U72aQI75+2bCuubnSLV92k\r\nT1sh1jKk3MiOqxveqyAb4xlRVV+WqiGLliv39Ln3u+/KCmGG2tATcNAgMx2/\r\nfzFZAV4NTH8/FsY5JnRlUSA4isSmR1QyguyuqqhGK8/0Se9H4I/i3Ilqi5IN\r\nJc02YaMz9q0Hu2QqfobYbo2rYA6yXRdudvFXX2txk3epBZiKddHdzqlv5du4\r\nrzKs29qx1nLiVnbAQNbdhWvnHc9+jRHfUAImEioGpJNwB3wtFASf7+i+ECbD\r\n7Mj8xdkbo/EkSKc7XpRcOzC8sXat2RvY1xQ=\r\n=pzr7\r\n-----END PGP SIGNATURE-----\r\n"
+          }
+        },
+        "1.0.0-beta.0": {
+          "name": "@lens-protocol/wagmi",
+          "version": "1.0.0-beta.0",
+          "dependencies": {
+            "@lens-protocol/shared-kernel": "0.7.0-beta.0"
+          },
+          "devDependencies": {
+            "@babel/core": "^7.20.12",
+            "@babel/preset-env": "^7.20.2",
+            "@babel/preset-typescript": "^7.18.6",
+            "@types/node": "^18.14.0",
+            "ethers": "^5.7.2",
+            "prettier": "^2.8.4",
+            "react": "^18.2.0",
+            "react-dom": "^18.2.0",
+            "typescript": "^4.9.5",
+            "wagmi": "0.12.7",
+            "@lens-protocol/eslint-config": "0.5.0",
+            "@lens-protocol/react-web": "1.0.0-beta.0",
+            "@lens-protocol/prettier-config": "0.5.0",
+            "@lens-protocol/tsconfig": "0.2.0-beta.0"
+          },
+          "peerDependencies": {
+            "ethers": "^5.7.2",
+            "wagmi": "0.12.7",
+            "@lens-protocol/react-web": "1.0.0-beta.0"
+          },
+          "dist": {
+            "integrity": "sha512-w/dkPJdUOlJ4a37Xqoo2C3hN8u1HfMfsx8Wqg+s1zorFIltQ+QKzRaTLc4FmWKg72rgY7uBY/fM40vsA4ZMrMw==",
+            "shasum": "88cb5525ad99d418a74f0fe73877429a0158e607",
+            "tarball": "https://registry.npmjs.org/@lens-protocol/wagmi/-/wagmi-1.0.0-beta.0.tgz",
+            "fileCount": 9,
+            "unpackedSize": 52698,
+            "signatures": [
+              {
+                "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                "sig": "MEUCIBHQR525EUpfZNX8oh4ykXokQRPjOXSKcmslyn1qA2JnAiEAqCxSyJaBlrBL007DmWEvNr2323pX9ZRGVW97QpmavHo="
+              }
+            ],
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJkJU/YACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2VmqlHA/5AcJm5aU4BcMiVsUzhxMth3FOCpXseeMM7VYHU+ncZykofz7V\r\noyMLGgs6JrJQ3IV15+MjOxfGHdyHIHWTTMDWwIeOTdKXZ26DAnmhjxIrKXZc\r\nw9fq4raL+fn3kSNl+TxXJEtN5N1kzGM50XtsBX0XjL+qE7fOyJrkwSu7dbU+\r\nU7s+H0JxKyt8f7FoNlkLfG/KQerotS2LEKvaEp1LfR+rVl/eH9mYv3HOU1G0\r\nIGakK7BQN9l8z/ECor1Jl9AMeM3ogchdXefTRuPGmCBy8hknFjhClGhtZGY+\r\nkfvFF6hRNYNZdzpYRqeCuTV18byfnr3JVciuvxuZjwaQrEMAes5ApVjE8exN\r\nQeVYD56lYnlKUUepiA5VzAWjttc1UjfXlUNwIEmEzektNyNbYXzZ3/hhBg8z\r\nwKJAlOVpWVltLbcVTXkpYnFF9AbNsV4Chke4w9ngfWpgQ8UJFfUGIKJdyMjl\r\nLjZYHTstQDYAZ46FwtyiuP7dOvpldGGij3enAOnmLINcLd2TFM1K6rVhyc+2\r\n5JduLR4mKttG8G4R0CeQnvNE1ZuKqIVYnOrWxImSym6YFNUAL9nmQGBqEj+S\r\n3VlzXRvVJV82tQ/kQCEX3pXJ5jIRvTLn928eSepSfklhg4GNLoYdG2uFBcML\r\nQqlXYMFpFm5ph3FTO5nhUtciA4JOugpjm1U=\r\n=/sng\r\n-----END PGP SIGNATURE-----\r\n"
+          }
+        },
+        "1.0.0-beta.1": {
+          "name": "@lens-protocol/wagmi",
+          "version": "1.0.0-beta.1",
+          "dependencies": {
+            "@lens-protocol/shared-kernel": "0.7.0-beta.0"
+          },
+          "devDependencies": {
+            "@babel/core": "^7.20.12",
+            "@babel/preset-env": "^7.20.2",
+            "@babel/preset-typescript": "^7.18.6",
+            "@types/node": "^18.14.0",
+            "ethers": "^5.7.2",
+            "prettier": "^2.8.4",
+            "react": "^18.2.0",
+            "react-dom": "^18.2.0",
+            "typescript": "^4.9.5",
+            "wagmi": "0.12.7",
+            "@lens-protocol/eslint-config": "0.5.0",
+            "@lens-protocol/prettier-config": "0.5.0",
+            "@lens-protocol/tsconfig": "0.2.0-beta.0",
+            "@lens-protocol/react-web": "1.0.0-beta.1"
+          },
+          "peerDependencies": {
+            "ethers": "^5.7.2",
+            "wagmi": "0.12.7",
+            "@lens-protocol/react-web": "1.0.0-beta.1"
+          },
+          "dist": {
+            "integrity": "sha512-BASN3bHzm+qMgZfvPO9x4+KnjegFPkMF9wpuvJNuGQxQK7kImO5JJFzJBungMqQf5CLmWBx+3YFqzt9R0lsgpQ==",
+            "shasum": "3bac7b3e3b0c88346311ae49097ea1373f1963c4",
+            "tarball": "https://registry.npmjs.org/@lens-protocol/wagmi/-/wagmi-1.0.0-beta.1.tgz",
+            "fileCount": 9,
+            "unpackedSize": 52698,
+            "signatures": [
+              {
+                "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                "sig": "MEYCIQC8Mg110IEn7iHiQ0nBYYm0z1iboTpCIcctaqAfVVl34wIhAICzD9krOWyAIAcVttQZppf3pt1/YRG40C82r3rKTCM3"
+              }
+            ],
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJkJsIiACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2VmqgMg//aYQ75Tm7Lf/xqniwESEbRnnzrfJFoZpgAOSA1bTso+g/a+Dg\r\nbNGXy6TWXQPzdHymRgpbCnGwMi7VJN8Nu8v6bf4I8Z8vOlhSz+cL+ZirK3Qi\r\nTSQedg7Q8pix6Ss3zDdok2TlFnwvzsdn8yfMpn7WKJ1kR0ACia/3EGI7Dm6/\r\nfW+wz7qzsstDOkb0jOAoSujGOw0uKOuZSat6MD8pM80ddQPrSY/xKLPYX5Dv\r\niySnTOIcLhMMzWTi4bfzC/VJ68xhuIA50jop1gB1fHejpc9T3xQv5QHxcOkV\r\n2524YeEYUbtld7g4yLHw2WWcCXcHUs6Lz6Ep10fapyIn1OGabFAmncB5WVAt\r\ncTgqqChHkGtBtqg3nCuiZeYPwHdyfBP8vY6PeDEyCw+/V9CqBBRMfYmz5UiT\r\nITXaVllgby8YusW3qCDhcEen5Cs3ULhyuE3lS23HlzITp9HCxqBXrnE57ZIL\r\neqRsxbNR6ivNd2V8wbBHLqYblnZUA/x++ghMcqx2nj0BHH23MTsBFc3WPvqv\r\n4e2zAfo4hS9gFTF6xwMYNgpzHbGfrhGYYz7W5dk53xpnEzUum8YnebzEx+c4\r\nD4MiMYkO/+ORoKzYBP9aFEa5fsJ/ThhQFMoLeNzE8rNY1KT5WUuh7mT/Ye+9\r\nolOgNl+8q+FlahDoX3jyKGy6RPrNn20IUnM=\r\n=d9Az\r\n-----END PGP SIGNATURE-----\r\n"
+          }
+        },
+        "1.0.0": {
+          "name": "@lens-protocol/wagmi",
+          "version": "1.0.0",
+          "dependencies": {
+            "@lens-protocol/shared-kernel": "0.7.0"
+          },
+          "devDependencies": {
+            "@babel/core": "^7.20.12",
+            "@babel/preset-env": "^7.20.2",
+            "@babel/preset-typescript": "^7.18.6",
+            "@types/node": "^18.14.0",
+            "ethers": "^5.7.2",
+            "prettier": "^2.8.4",
+            "react": "^18.2.0",
+            "react-dom": "^18.2.0",
+            "typescript": "^4.9.5",
+            "wagmi": "0.12.7",
+            "@lens-protocol/prettier-config": "0.5.0",
+            "@lens-protocol/eslint-config": "0.5.0",
+            "@lens-protocol/react-web": "1.0.0",
+            "@lens-protocol/tsconfig": "0.2.0"
+          },
+          "peerDependencies": {
+            "ethers": "^5.7.2",
+            "wagmi": "0.12.7",
+            "@lens-protocol/react-web": "1.0.0"
+          },
+          "dist": {
+            "integrity": "sha512-2B1KPSndk5SvBDy1DPHdBNTWIqhhsRsXgM29zQJqdZfNRs8vxINkBrA36YWhf9yqSFr2v7svm7o40TcArGx74w==",
+            "shasum": "e6e56f68f9320fa53182dc7ff7f60a530e016345",
+            "tarball": "https://registry.npmjs.org/@lens-protocol/wagmi/-/wagmi-1.0.0.tgz",
+            "fileCount": 9,
+            "unpackedSize": 52663,
+            "signatures": [
+              {
+                "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                "sig": "MEYCIQCuzEaXmJ2Wg/UVoYSIeJ9L7T/9MiMYH3spIADv3g/yywIhAOpFPQ1VsicVHa/EVp2kr5p42PVFZFP2AklECD2Pehgv"
+              }
+            ],
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJkNRWrACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2Vmp7Rw//fumyxR+R+jchVUxibWaePGUk4MKw+MyusBVg4bn3/5/y0dzI\r\n6rVUG/LbyseZ03wfjWdOVabyIRj8GAP8qilZCCH2viPKmMoNSVhnKh6Tqcql\r\nS5blgmyR9wCc2u2z3DMt0s6iC4Fe60dORHbtQ4m9hOcElfvvlBT264TOJbrY\r\nCYI7ugDPKKXalo/1wP4VtZaflFB6bAQ3p7z5Mw/FPIJL6lwb//ICr7RvsRON\r\naAlAaAbyJgLLZM+6VX07GGQfqsSyZ1DqPLVZJNJSg2XS7Jn0gEaht51cjOX3\r\nFbPmXR8+gLldmdVLDiuc4zf851KLoBat59l4KRRu9Gw5fUoztrJbVRDLkiwo\r\nJSkj7VRj/A0rCf+4G6tSdUWQCwQ/cgLkx2sLe1tb2/nRcSBk/4KNmulgPBYe\r\nSe6/vjOu3IbNzSQ+iud/h52eOKeMDFSERhenGe357FZoEPa5xnpzW6fHH9Fh\r\nwdDFq8PnDd1ftKtkZ9uk2Wck8oiYkIjdz4zbuUF9w+5PHw1N44gs8ezudAxu\r\nj7XLZ4//Jajylym2+6yoZhvNbbZ3QLLxbGBXC6B4qPqXHNrNTaQ0wwt3c574\r\nCbIzZHyYdL7LYLUqseafDc3HHbGNfWY7GsNYSpnsayNGh2Zt6cTxpBnUEOTh\r\nuPZz5WYHUzPOD9teVRaQrrJkrdDgGo37wQA=\r\n=UN2D\r\n-----END PGP SIGNATURE-----\r\n"
+          }
+        },
+        "1.0.1": {
+          "name": "@lens-protocol/wagmi",
+          "version": "1.0.1",
+          "dependencies": {
+            "@lens-protocol/shared-kernel": "0.7.1"
+          },
+          "devDependencies": {
+            "@babel/core": "^7.20.12",
+            "@babel/preset-env": "^7.20.2",
+            "@babel/preset-typescript": "^7.18.6",
+            "@types/node": "^18.14.0",
+            "ethers": "^5.7.2",
+            "prettier": "^2.8.4",
+            "react": "^18.2.0",
+            "react-dom": "^18.2.0",
+            "typescript": "^4.9.5",
+            "wagmi": "0.12.7",
+            "@lens-protocol/eslint-config": "0.5.0",
+            "@lens-protocol/prettier-config": "0.5.0",
+            "@lens-protocol/react-web": "1.0.1",
+            "@lens-protocol/tsconfig": "0.2.0"
+          },
+          "peerDependencies": {
+            "ethers": "^5.7.2",
+            "wagmi": "0.12.7",
+            "@lens-protocol/react-web": "1.0.1"
+          },
+          "dist": {
+            "integrity": "sha512-CPtyR1BfNZnZi1IznVNZl5OMeoPgUqQYOqpOe8dfUbyqRJrpuxmjHMsR5p2KMTVGwfeV6JQcMIT6Jy+S34J3IQ==",
+            "shasum": "efc695413cdac15c598ca7dc323b9d5438de9f19",
+            "tarball": "https://registry.npmjs.org/@lens-protocol/wagmi/-/wagmi-1.0.1.tgz",
+            "fileCount": 9,
+            "unpackedSize": 52663,
+            "signatures": [
+              {
+                "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                "sig": "MEUCIHMYHhCaOfUGdT+UrY6nEls0GUwIrmqdaWvB32CWWNSvAiEA921/QH6bWx1ekJeqr4JjZcWkas9659v4MNsg9PgjOcc="
+              }
+            ],
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJkNmxRACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2Vmp1LRAAj5yXWfx4u3Mfqs3T+sgprvW0eZO+vTkhdyxr0Z/mvOX08Kjs\r\nMrwj1XoXc+7d/ipMt2JtAFqJvHnyRAWAkPvGGc2dg3geo/i0PYFd/rWWzBRP\r\n5FoO7wwO9mOzlhQ8HGtT/gsT8otKmOtqrZfIpI+rkgYlljVe4esj/+mCIs+G\r\nrw7FXgbd5/HGkj+McwZvCOLYKrYxfou54mqbUpiT3Wy+dsP0zSNBOJ9N/bsh\r\nJ8DYQcEsYZ+eLnWylV8QNJmW9XrDS1YjAQCUBB75MS+A//UIDeJ4//O0IVk3\r\nE7CF7ymBKkIQ/vzaZXBOmNeSQgP+MMLLZovD3x3eKS7jrnD9bGw98NF5JTUJ\r\n/9n4WwR45jQvL9gBd3IUSPUCt9bgF8WIiSzXXu6fkR9WVjKaXKbTkTf0rue3\r\nQTOoBQxtKWOLS3eg4acZGZ7OGR4gLylflyh1tUWBfwYUAk4FIwy8tlMn29U8\r\n16qeCfhiLrQaRzQQcv0gsWlkpfkEoyV2+kHZ/lt1mxbdIEwKLVOUT0ArW97t\r\nxsgXorsfO1mCdAveplp1PVRan4tFfpvJA9K9w8ZUBd07KW2OEmzo9GunUiwb\r\nLMWJqok51mQZLEXlnEpMTyfudaasFKXeAFeJWs7pME98mckWsvBfLCtvpvCg\r\nsu3kdBaurjDGTimBPG6VSoDqPr+re6jnaHs=\r\n=gupb\r\n-----END PGP SIGNATURE-----\r\n"
+          }
+        }
+      },
+      "modified": "2023-04-12T08:31:13.159Z",
+      "cachedAt": 1681441366853
+    },
+    "pkgsStack": [],
+    "err": {
+      "name": "pnpm",
+      "message": "No matching version found for @lens-protocol/wagmi@^0.12.1",
+      "code": "ERR_PNPM_NO_MATCHING_VERSION",
+      "stack": "pnpm: No matching version found for @lens-protocol/wagmi@^0.12.1\n    at resolveNpm (/Users/nazeehvahora/.nvm/versions/node/v16.13.0/pnpm-global/5/node_modules/.pnpm/pnpm@7.1.7/node_modules/pnpm/dist/pnpm.cjs:84697:15)\n    at runMicrotasks (<anonymous>)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async Object.resolve (/Users/nazeehvahora/.nvm/versions/node/v16.13.0/pnpm-global/5/node_modules/.pnpm/pnpm@7.1.7/node_modules/pnpm/dist/pnpm.cjs:84879:28)\n    at async run (/Users/nazeehvahora/.nvm/versions/node/v16.13.0/pnpm-global/5/node_modules/.pnpm/pnpm@7.1.7/node_modules/pnpm/dist/pnpm.cjs:91343:23)"
+    }
+  }
+}
