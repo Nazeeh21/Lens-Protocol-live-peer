@@ -1,4 +1,4 @@
-import { Button } from "@chakra-ui/react";
+import { Box, Button, Flex, Text, useClipboard } from "@chakra-ui/react";
 import { useCreateStream } from "@livepeer/react";
 import { Client, isSupported } from "@livepeer/webrtmp-sdk";
 import React, { useEffect, useRef, useState } from "react";
@@ -8,6 +8,7 @@ const Creator = (): React.ReactNode => {
   const [isLive, setIsLive] = useState<boolean>(false);
   const video = useRef<HTMLVideoElement>(null);
   const streamRef = useRef<MediaStream | null>(null);
+  const { onCopy, value, setValue, hasCopied } = useClipboard("");
 
   const { mutate: createStream, data: stream } = useCreateStream({
     name: streamName,
@@ -49,6 +50,7 @@ const Creator = (): React.ReactNode => {
     // @ts-ignore
     const session = client.cast(streamRef.current, streamKey);
     setIsLive(true);
+    setValue(stream?.playbackId);
     session.on("open", () => {
       console.log("Stream started.");
       alert("Stream started; visit Livepeer Dashboard.");
@@ -62,40 +64,63 @@ const Creator = (): React.ReactNode => {
       console.log("Stream error.", err.message);
     });
   };
-  return <>
-  <div className="mx-12 flex justify-center flex-col items-center">
-        <div className="w-1/3 mt-20">
+  return (
+    <>
+      <Flex marginX={2} justify="center" flexDir="column" alignItems="center">
+        <Box w="40%" mt={"4rem"}>
           {!isLive ? (
             <>
               <input
+                style={{
+                  marginTop: "3rem",
+                  borderRadius: "0.5rem",
+                  margin: "auto",
+                  padding: "0.5rem",
+                }}
+                type="text"
                 // label="Stream Name"
                 placeholder="My first stream"
                 onChange={(e) => setStreamName(e.target.value)}
               />
-              <div className="flex justify-end">
+              <Box mt={3}>
                 <Button
-                  className="bg-primary border-primary text-background px-4 py-2.5 text-sm"
+                  px={"4rem"}
+                  py={"1rem"}
                   onClick={() => createStream?.()}
                 >
                   Create Stream
                 </Button>
-              </div>
+              </Box>
             </>
           ) : (
             <>
-              <p className="text-3xl text-white text-center">You are live!</p>
-              <div className="flex mt-5">
-                <p className="font-regular text-zinc-500 w-32">Playback Id: </p>
-                <p className="text-white ml-2 hover:text-primary hover:cursor-pointer">
-                  {stream?.playbackId}
-                </p>
-              </div>
+              <Box
+                fontSize={"3rem"}
+                textColor="white"
+                textAlign="center"
+                className="text-3xl text-white text-center"
+              >
+                You are live!
+              </Box>
+              <Flex alignItems='center' mt={"1rem"}>
+                <Text w="fit-content" mr={2}>
+                  Playback Id:{" "}
+                </Text>
+                <Text textColor={"white"}>{stream?.playbackId}</Text>
+                <Button ml={3} onClick={onCopy}>
+                  {hasCopied ? "Copied" : "Copy StreamLink"}
+                </Button>
+              </Flex>
             </>
           )}
-          <video className="mt-9 rounded-md" ref={video} />
-        </div>
-      </div>
-  </>;
+          <video
+            style={{ marginTop: "3rem", borderRadius: "0.5rem" }}
+            ref={video}
+          />
+        </Box>
+      </Flex>
+    </>
+  );
 };
 
 export default Creator;

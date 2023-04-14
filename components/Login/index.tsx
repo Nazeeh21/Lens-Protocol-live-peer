@@ -4,13 +4,9 @@ import { useAccount, useConnect, useDisconnect } from "wagmi";
 import { InjectedConnector } from "wagmi/connectors/injected";
 
 function LoginButton() {
-  const {
-    execute: login,
-    error: loginError,
-    isPending: isLoginPending,
-  } = useWalletLogin();
+  const { execute: login, error: loginError, isPending: isLoginPending } = useWalletLogin();
 
-  const { isConnected, address } = useAccount();
+  const { isConnected } = useAccount();
   const { disconnectAsync } = useDisconnect();
 
   const { connectAsync } = useConnect({
@@ -25,20 +21,24 @@ function LoginButton() {
     const { connector } = await connectAsync();
 
     if (connector instanceof InjectedConnector) {
+      console.log("Injected connector");
       const signer = await connector.getSigner();
-      await login(signer);
+      try {
+        await login(signer);
+      } catch (error) {
+        console.log("Error while logging in", error);
+        alert('Error while logging in');
+      }
     }
   };
-
+ 
   return (
     <div>
       {loginError && <p>{loginError as unknown as string}</p>}
-
-      <Button disabled={isLoginPending} onClick={onLoginClick}>
-        Log in
-      </Button>
+      <button disabled={isLoginPending} onClick={onLoginClick}>Log in</button>
     </div>
   );
 }
+
 
 export default LoginButton;

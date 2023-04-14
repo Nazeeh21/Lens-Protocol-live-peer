@@ -16,6 +16,7 @@
     "@lens-protocol/wagmi": "^1.0.1",
     "@livepeer/react": "^2.4.2",
     "@livepeer/webrtmp-sdk": "^0.2.3",
+    "@mailchain/sdk": "^0.18.4",
     "@types/node": "18.15.11",
     "@types/react": "18.0.35",
     "@types/react-dom": "18.0.11",

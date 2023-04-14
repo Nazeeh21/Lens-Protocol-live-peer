@@ -3,10 +3,16 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import ExploreFeed from "@/components/explore";
+import { useActiveProfile } from "@lens-protocol/react-web";
+import UserFeed from "@/components/userFeed";
+import { useAccount } from "wagmi";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const { data, error, loading } = useActiveProfile();
+  const { isConnected } = useAccount();
+
   return (
     <>
       <Head>
@@ -16,7 +22,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        {/* {!isConnected ?  */}
         <ExploreFeed />
+        {/* : < UserFeed/>} */}
       </main>
     </>
   );
