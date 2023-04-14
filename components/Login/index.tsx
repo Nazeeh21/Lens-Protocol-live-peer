@@ -33,13 +33,10 @@ function LoginButton() {
   return (
     <div>
       {loginError && <p>{loginError as unknown as string}</p>}
-      {isConnected ? (
-        <Box>{address?.toString().slice(0,3) + '....' + address?.toString().slice(-3)} connected</Box>
-      ) : (
-        <Button disabled={isLoginPending} onClick={onLoginClick}>
-          Log in
-        </Button>
-      )}
+
+      <Button disabled={isLoginPending} onClick={onLoginClick}>
+        Log in
+      </Button>
     </div>
   );
 }

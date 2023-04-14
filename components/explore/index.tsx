@@ -12,7 +12,7 @@ const ExploreFeed = () => {
   if (loading) return <>Loading...</>;
   return (
     <>
-      {data?.map((post, index) => (
+      {typeof data !== undefined && data?.map((post, index) => (
         <Post key={index} postData={post} />
       ))}
     </>

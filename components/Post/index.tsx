@@ -4,7 +4,7 @@ import { AnyPublication } from "@lens-protocol/react-web";
 const PostComp = ({ postData }: { postData: AnyPublication }) => {
   return (
     <Flex
-      m={2}
+      m={3}
       borderRadius={"0.5rem"}
       borderWidth={2}
       borderColor={"whitesmoke"}
@@ -24,7 +24,7 @@ const PostComp = ({ postData }: { postData: AnyPublication }) => {
         <Box fontWeight="bold">Name: {postData.profile.name}</Box>
         <Box>Handle: {postData.profile.handle}</Box>
         {/* @ts-expect-error */}
-        <Box>{postData.metadata.content}</Box>
+        <Box>{postData.metadata?.content}</Box>
       </Stack>
     </Flex>
   );
